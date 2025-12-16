@@ -10,7 +10,7 @@ const linkTypes = [
     title: "Whitehat",
     subtitle: "Full Landing Page",
     description: "Fully customizable landing page with all CTR mechanisms, analytics, and conversion tools. Best for building your brand.",
-    color: "green",
+    color: "green" as const,
     features: ["Full page customization", "All CTR mechanisms", "Voice notes & media", "Complete analytics"],
   },
   {
@@ -19,7 +19,7 @@ const linkTypes = [
     title: "Greyhat",
     subtitle: "Age-Gated Warning",
     description: "Compliant age verification page before redirecting. Maintains some branding while meeting platform requirements.",
-    color: "yellow",
+    color: "yellow" as const,
     features: ["18+ age gate", "Platform compliant", "Quick redirect", "Basic tracking"],
   },
   {
@@ -28,7 +28,7 @@ const linkTypes = [
     title: "Blackhat",
     subtitle: "Direct Redirect",
     description: "Instant redirect to your destination. Maximum speed, zero friction. For when every millisecond counts.",
-    color: "red",
+    color: "red" as const,
     features: ["Instant redirect", "Zero load time", "No landing page", "Click tracking only"],
   },
 ];
