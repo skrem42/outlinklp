@@ -71,15 +71,15 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           {/* Left content */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
           >
             {/* CTR Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.1 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-pink-500/30 bg-pink-500/10 mb-8"
             >
               <TrendingUp className="w-4 h-4 text-pink-400" />
@@ -100,9 +100,9 @@ export default function Hero() {
 
             {/* Domain Claim CTA */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.2 }}
               className="mb-8"
             >
               <div className="flex flex-col sm:flex-row gap-3">
@@ -146,7 +146,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 0.3 }}
               className="grid grid-cols-3 gap-6"
             >
               {[
@@ -164,9 +164,9 @@ export default function Hero() {
 
           {/* Right content - Phone mockup with CTR visualization */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
             className="relative hidden lg:block"
           >
             {/* Glow effect */}
@@ -182,56 +182,17 @@ export default function Hero() {
                 {/* Phone notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-20" />
                 
-                {/* Screen content */}
-                <div className="absolute inset-4 bg-gradient-to-b from-zinc-900 to-black rounded-[2rem] overflow-hidden">
-                  {/* Profile header */}
-                  <div className="pt-12 px-6 text-center">
-                    <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-pink-400 to-orange-400 mb-4" />
-                    <h3 className="text-white font-bold text-lg">@yourname</h3>
-                    <p className="text-zinc-500 text-sm">✨ Exclusive content creator</p>
-                  </div>
-                  
-                  {/* CTR mechanism preview */}
-                  <div className="mt-6 px-4 space-y-3">
-                    {/* Scarcity badge */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.8 }}
-                      className="relative w-full py-3 px-4 rounded-xl bg-gradient-to-r from-pink-500/20 to-orange-400/20 border border-pink-500/30"
-                    >
-                      <div className="absolute -top-2 right-3 px-2 py-0.5 rounded-full bg-pink-500 text-xs text-white font-semibold">
-                        🔥 3 spots left
-                      </div>
-                      <div className="text-white text-sm font-medium text-center">
-                        VIP OnlyFans
-                      </div>
-                    </motion.div>
-                    
-                    {/* Blur preview */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.9 }}
-                      className="relative w-full py-8 px-4 rounded-xl bg-zinc-800/50 border border-zinc-700/50 overflow-hidden"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-transparent blur-sm" />
-                      <div className="relative text-center">
-                        <div className="text-zinc-400 text-xs mb-1">Tap to reveal</div>
-                        <div className="text-white text-sm font-medium blur-sm">Exclusive link...</div>
-                      </div>
-                    </motion.div>
-                    
-                    {/* Regular link */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 1 }}
-                      className="w-full py-3 px-4 rounded-xl bg-zinc-800/50 border border-zinc-700/50 text-white text-sm font-medium text-center"
-                    >
-                      Free Preview
-                    </motion.div>
-                  </div>
+                {/* Screen content - Video */}
+                <div className="absolute inset-2 rounded-[2.5rem] overflow-hidden">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    <source src="/1218.webm" type="video/webm" />
+                  </video>
                 </div>
               </div>
             </motion.div>
@@ -240,7 +201,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.2 }}
+              transition={{ delay: 0.7 }}
               className="absolute top-20 -left-8 glass rounded-xl p-4 glow-pink"
             >
               <div className="flex items-center gap-2 mb-1">
@@ -255,7 +216,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.4 }}
+              transition={{ delay: 0.8 }}
               className="absolute bottom-32 -right-4 glass rounded-xl p-4 glow-pink"
             >
               <div className="text-2xl font-bold gradient-text-pink">2,847</div>
@@ -269,8 +230,8 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        transition={{ delay: 0.8 }}
+        className="pb-8 flex justify-center"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}

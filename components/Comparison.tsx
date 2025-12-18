@@ -157,10 +157,10 @@ export default function Comparison() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -174,10 +174,10 @@ export default function Comparison() {
 
         {/* Comparison table */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.4, delay: 0.08 }}
           className="overflow-x-auto"
         >
           <div className="min-w-[800px]">
@@ -187,10 +187,10 @@ export default function Comparison() {
               {competitors.map((competitor, i) => (
                 <motion.div
                   key={competitor.name}
-                  initial={{ opacity: 0, y: -20 }}
+                  initial={{ opacity: 0, y: -15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.1 + i * 0.05 }}
+                  transition={{ duration: 0.3, delay: 0.08 + i * 0.04 }}
                   className={`p-4 rounded-t-xl text-center ${
                     competitor.isUs
                       ? "bg-gradient-to-b from-pink-500/20 to-transparent border-t-2 border-x-2 border-pink-500/50"
@@ -211,10 +211,10 @@ export default function Comparison() {
             {featureRows.map((row, rowIndex) => (
               <motion.div
                 key={row.key}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -15 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.2 + rowIndex * 0.05 }}
+                transition={{ duration: 0.3, delay: 0.12 + rowIndex * 0.04 }}
                 className={`grid grid-cols-7 gap-2 ${
                   rowIndex % 2 === 0 ? "bg-zinc-900/30" : "bg-transparent"
                 }`}
@@ -315,4 +315,3 @@ export default function Comparison() {
     </section>
   );
 }
-

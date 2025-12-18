@@ -62,10 +62,10 @@ export default function Builder() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -81,10 +81,10 @@ export default function Builder() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Page preview */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
             className="relative order-2 lg:order-1"
           >
             {/* Glow */}
@@ -140,7 +140,7 @@ export default function Builder() {
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.4 }}
+                        transition={{ delay: 0.25 }}
                         className="relative p-3 rounded-xl bg-gradient-to-r from-pink-500/20 to-orange-400/20 border border-pink-500/30"
                       >
                         <div className="absolute -top-1 right-2 px-2 py-0.5 rounded-full bg-pink-500 text-[10px] text-white font-bold">
@@ -153,7 +153,7 @@ export default function Builder() {
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.5 }}
+                        transition={{ delay: 0.3 }}
                         className="p-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50"
                       >
                         <div className="text-white text-sm font-medium">Free Preview</div>
@@ -163,7 +163,7 @@ export default function Builder() {
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.6 }}
+                        transition={{ delay: 0.35 }}
                         className="p-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50"
                       >
                         <div className="text-white text-sm font-medium">Instagram</div>
@@ -177,10 +177,10 @@ export default function Builder() {
 
           {/* Features list */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="order-1 lg:order-2"
           >
             <div className="space-y-4">
@@ -189,10 +189,10 @@ export default function Builder() {
                 return (
                   <motion.div
                     key={feature.title}
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: 15 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.3 + i * 0.05 }}
+                    transition={{ duration: 0.3, delay: 0.15 + i * 0.04 }}
                     className="flex items-start gap-4 p-4 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:border-pink-500/30 transition-colors"
                   >
                     <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-pink-500/20 to-orange-400/20 flex items-center justify-center flex-shrink-0">

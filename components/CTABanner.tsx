@@ -39,10 +39,10 @@ export default function CTABanner() {
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         {/* Urgency badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-pink-500/30 bg-pink-500/10 mb-8"
         >
           <Clock className="w-4 h-4 text-pink-400" />
@@ -51,10 +51,10 @@ export default function CTABanner() {
 
         {/* Headline */}
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.4, delay: 0.05 }}
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
         >
           Every Day You Wait is{" "}
@@ -63,10 +63,10 @@ export default function CTABanner() {
 
         {/* Body */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
           className="text-xl text-zinc-400 mb-10 max-w-2xl mx-auto"
         >
           Your fans are already clicking your bio. The only question is whether they make it to your OF.{" "}
@@ -75,10 +75,10 @@ export default function CTABanner() {
 
         {/* CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <motion.a
@@ -97,7 +97,7 @@ export default function CTABanner() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           className="mt-6 text-sm text-zinc-500"
         >
           No credit card required. Set up in under 5 minutes.

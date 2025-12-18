@@ -36,10 +36,10 @@ export default function Domains() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Your Brand.{" "}
@@ -60,10 +60,10 @@ export default function Domains() {
                 return (
                   <motion.div
                     key={feature.title}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    transition={{ duration: 0.3, delay: i * 0.06 }}
                     className="p-4 rounded-xl bg-zinc-900/50 border border-zinc-800"
                   >
                     <Icon className="w-6 h-6 text-pink-400 mb-3" />
@@ -77,10 +77,10 @@ export default function Domains() {
           
           {/* Visual */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="relative"
           >
             {/* Glow */}
@@ -98,10 +98,10 @@ export default function Domains() {
                 ].map((domain, i) => (
                   <motion.div
                     key={domain.domain}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -15 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
+                    transition={{ duration: 0.3, delay: 0.2 + i * 0.06 }}
                     className="flex items-center justify-between p-4 rounded-xl bg-zinc-900/80 border border-zinc-800"
                   >
                     <div className="flex items-center gap-3">

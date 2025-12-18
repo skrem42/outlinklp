@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Clock, Eye, Sparkles, Lock, Award, PartyPopper } from "lucide-react";
+import { Clock, Eye, Sparkles, Lock, Award, PartyPopper, Mic, ChevronDown } from "lucide-react";
 
 const features = [
   {
@@ -72,10 +72,21 @@ const features = [
       type: "effects",
     },
   },
+  {
+    id: "voicenotes",
+    icon: Mic,
+    title: "Voice Notes",
+    boost: "+18-25% CTR",
+    description: "Record personal audio messages for your fans. \"Hey babe, tap here to see something special...\" Voice creates intimacy and trust that text never can.",
+    preview: {
+      type: "voicenotes",
+    },
+  },
 ];
 
 export default function Features() {
   const [activeFeature, setActiveFeature] = useState(features[0]);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(features[0].id);
 
   return (
     <section id="features" className="relative py-32 overflow-hidden">
@@ -85,10 +96,10 @@ export default function Features() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-6"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -102,10 +113,10 @@ export default function Features() {
 
         {/* Intro text */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.4, delay: 0.05 }}
           className="text-center mb-16"
         >
           <p className="text-zinc-500">
@@ -114,14 +125,95 @@ export default function Features() {
           </p>
         </motion.div>
 
-        {/* Features tabs */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        {/* Mobile Accordion */}
+        <div className="lg:hidden space-y-3">
+          {features.map((feature) => {
+            const Icon = feature.icon;
+            const isExpanded = mobileExpanded === feature.id;
+            
+            return (
+              <motion.div
+                key={feature.id}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className={`rounded-2xl border overflow-hidden transition-colors ${
+                  isExpanded
+                    ? "border-pink-500/50 bg-pink-500/10"
+                    : "border-zinc-800 bg-zinc-900/50"
+                }`}
+              >
+                <button
+                  onClick={() => setMobileExpanded(isExpanded ? null : feature.id)}
+                  className="w-full text-left p-4"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
+                        isExpanded
+                          ? "bg-gradient-to-br from-pink-500 to-orange-400"
+                          : "bg-zinc-800"
+                      }`}>
+                        <Icon className="w-5 h-5 text-white" />
+                      </div>
+                      <h3 className={`font-semibold transition-colors ${
+                        isExpanded ? "text-white" : "text-zinc-300"
+                      }`}>
+                        {feature.title}
+                      </h3>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className={`px-2 py-0.5 rounded-full text-xs font-semibold ${
+                        isExpanded 
+                          ? "bg-pink-500/20 text-pink-300" 
+                          : "bg-zinc-800 text-zinc-500"
+                      }`}>
+                        {feature.boost}
+                      </div>
+                      <motion.div
+                        animate={{ rotate: isExpanded ? 180 : 0 }}
+                        transition={{ duration: 0.15 }}
+                        className={isExpanded ? "text-pink-400" : "text-zinc-500"}
+                      >
+                        <ChevronDown className="w-5 h-5" />
+                      </motion.div>
+                    </div>
+                  </div>
+                </button>
+                
+                <AnimatePresence>
+                  {isExpanded && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.15 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-4 pb-4">
+                        <p className="text-sm text-zinc-400 mb-4">
+                          {feature.description}
+                        </p>
+                        <div className="aspect-[4/3] rounded-xl bg-zinc-900 border border-zinc-700/50 p-4 flex items-center justify-center">
+                          <FeaturePreview feature={feature} />
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-start">
           {/* Tab list */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
             className="space-y-3"
           >
             {features.map((feature) => {
@@ -132,7 +224,7 @@ export default function Features() {
                 <button
                   key={feature.id}
                   onClick={() => setActiveFeature(feature)}
-                  className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 group ${
+                  className={`w-full text-left p-5 rounded-2xl border transition-all duration-200 group ${
                     isActive
                       ? "border-pink-500/50 bg-pink-500/10 glow-pink"
                       : "border-zinc-800 bg-zinc-900/50 hover:border-zinc-700 hover:bg-zinc-900"
@@ -169,19 +261,19 @@ export default function Features() {
 
           {/* Feature content */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="lg:sticky lg:top-32"
           >
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeFeature.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.2 }}
                 className="glass rounded-3xl p-8 glow-strong"
               >
                 {/* Feature icon */}
@@ -323,24 +415,53 @@ function FeaturePreview({ feature }: { feature: typeof features[0] }) {
     );
   }
   
-  // Effects
+  if (preview.type === "effects") {
+    return (
+      <div className="w-full max-w-[240px]">
+        <motion.div
+          animate={{ boxShadow: ["0 0 20px rgba(255,107,157,0.3)", "0 0 40px rgba(255,107,157,0.6)", "0 0 20px rgba(255,107,157,0.3)"] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="p-6 rounded-xl bg-zinc-800 border border-pink-500/30"
+        >
+          <motion.div
+            animate={{ rotate: [0, 10, -10, 0] }}
+            transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 2 }}
+            className="text-4xl text-center mb-2"
+          >
+            🎉
+          </motion.div>
+          <div className="text-white font-semibold text-center">Link Revealed!</div>
+          <div className="text-xs text-zinc-400 text-center mt-1">+ confetti effect</div>
+        </motion.div>
+      </div>
+    );
+  }
+  
+  // Voice Notes
   return (
     <div className="w-full max-w-[240px]">
-      <motion.div
-        animate={{ boxShadow: ["0 0 20px rgba(255,107,157,0.3)", "0 0 40px rgba(255,107,157,0.6)", "0 0 20px rgba(255,107,157,0.3)"] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="p-6 rounded-xl bg-zinc-800 border border-pink-500/30"
-      >
-        <motion.div
-          animate={{ rotate: [0, 10, -10, 0] }}
-          transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 2 }}
-          className="text-4xl text-center mb-2"
-        >
-          🎉
-        </motion.div>
-        <div className="text-white font-semibold text-center">Link Revealed!</div>
-        <div className="text-xs text-zinc-400 text-center mt-1">+ confetti effect</div>
-      </motion.div>
+      <div className="p-6 rounded-xl bg-zinc-800 border border-zinc-700">
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <motion.div
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-orange-400 flex items-center justify-center"
+          >
+            <Mic className="w-5 h-5 text-white" />
+          </motion.div>
+        </div>
+        <div className="flex items-center justify-center gap-1 mb-3">
+          {[...Array(12)].map((_, i) => (
+            <div
+              key={i}
+              className="w-1 bg-pink-400 rounded-full"
+              style={{ height: `${4 + Math.random() * 12}px` }}
+            />
+          ))}
+        </div>
+        <div className="text-white font-semibold text-center text-sm">0:08</div>
+        <div className="text-xs text-zinc-400 text-center mt-1">Tap to play</div>
+      </div>
     </div>
   );
 }

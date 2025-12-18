@@ -31,10 +31,10 @@ export default function Problem() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -50,10 +50,10 @@ export default function Problem() {
             return (
               <motion.div
                 key={stat.value}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: 0.35, delay: i * 0.08 }}
                 className={`relative glass rounded-2xl p-8 text-center border ${stat.borderColor}`}
               >
                 <div className={`w-14 h-14 mx-auto rounded-xl ${stat.bgColor} flex items-center justify-center mb-4`}>
@@ -68,10 +68,10 @@ export default function Problem() {
 
         {/* Body copy */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           className="max-w-3xl mx-auto text-center"
         >
           <p className="text-xl text-zinc-400 leading-relaxed">
@@ -88,7 +88,7 @@ export default function Problem() {
           initial={{ opacity: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-16 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent"
         />
       </div>

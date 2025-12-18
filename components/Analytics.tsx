@@ -64,10 +64,10 @@ export default function Analytics() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-6"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -78,10 +78,10 @@ export default function Analytics() {
 
         {/* Pain point */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.4, delay: 0.05 }}
           className="text-center mb-16"
         >
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
@@ -93,10 +93,10 @@ export default function Analytics() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Features grid */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
             className="grid sm:grid-cols-2 gap-4"
           >
             {analyticsFeatures.map((feature, i) => {
@@ -104,10 +104,10 @@ export default function Analytics() {
               return (
                 <motion.div
                   key={feature.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                  transition={{ duration: 0.3, delay: i * 0.04 }}
                   className="p-4 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:border-pink-500/30 hover:bg-zinc-900 transition-all group"
                 >
                   <Icon className="w-6 h-6 text-pink-400 mb-3 group-hover:scale-110 transition-transform" />
@@ -120,10 +120,10 @@ export default function Analytics() {
 
           {/* Dashboard preview */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="relative"
           >
             {/* Glow */}
@@ -151,7 +151,7 @@ export default function Analytics() {
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
+                    transition={{ duration: 0.3, delay: 0.25 + i * 0.06 }}
                     className="text-center p-3 rounded-lg bg-zinc-900/50"
                   >
                     <div className="text-2xl font-bold text-white">{stat.value}</div>
@@ -169,7 +169,7 @@ export default function Analytics() {
                     initial={{ height: 0 }}
                     whileInView={{ height: `${height}%` }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.5 + i * 0.05 }}
+                    transition={{ duration: 0.35, delay: 0.3 + i * 0.03 }}
                     className="flex-1 rounded-t bg-gradient-to-t from-pink-500 to-orange-400 opacity-80"
                   />
                 ))}
@@ -191,7 +191,7 @@ export default function Analytics() {
                           initial={{ width: 0 }}
                           whileInView={{ width: `${source.percent}%` }}
                           viewport={{ once: true }}
-                          transition={{ duration: 0.8, delay: 0.6 }}
+                          transition={{ duration: 0.5, delay: 0.4 }}
                           className={`h-full ${source.color}`}
                         />
                       </div>
@@ -206,10 +206,10 @@ export default function Analytics() {
 
         {/* CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.25 }}
           className="text-center mt-12"
         >
           <p className="text-zinc-500 text-lg">
@@ -221,4 +221,3 @@ export default function Analytics() {
     </section>
   );
 }
-

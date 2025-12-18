@@ -50,10 +50,10 @@ export default function FAQ() {
       <div className="relative z-10 max-w-3xl mx-auto px-6">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -70,10 +70,10 @@ export default function FAQ() {
           {faqs.map((faq, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
+              transition={{ duration: 0.3, delay: i * 0.04 }}
               className={`rounded-2xl border transition-colors ${
                 openIndex === i
                   ? "border-pink-500/50 bg-pink-500/5"
@@ -91,7 +91,7 @@ export default function FAQ() {
                 </span>
                 <motion.div
                   animate={{ rotate: openIndex === i ? 180 : 0 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.15 }}
                   className={`flex-shrink-0 ${
                     openIndex === i ? "text-pink-400" : "text-zinc-500"
                   }`}
@@ -106,7 +106,7 @@ export default function FAQ() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.15 }}
                     className="overflow-hidden"
                   >
                     <p className="px-6 pb-6 text-zinc-400 leading-relaxed">
